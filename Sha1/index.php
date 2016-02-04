@@ -16,7 +16,7 @@
 					
 					echo '<p>' . sha1($_POST['crypt']) . '</p>';
 				} else {
-					echo '<p>Veuillez rentrer des caractères !' 
+					echo '<p>Veuillez rentrer des caractères !'; 
 				}
 			?>
 	</body>
