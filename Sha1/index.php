@@ -12,7 +12,6 @@
 
 		<p>La chaîne de caractère crypté est :</p>
 			<?php
-				//initialisation du hashage //ajout commentaire
 				if (isset($_POST['crypt'])) {
 					
 					echo '<p>' . sha1($_POST['crypt']) . '</p>';
