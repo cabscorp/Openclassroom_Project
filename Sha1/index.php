@@ -10,7 +10,7 @@
 			<input type="submit" value="Crypter !"/>
 		</form>
 
-		<p>La chaîne de caractère crypté en Sha1 est :</p>
+		<p>Le hash Sha1 est :</p>
 			<?php
 				if (isset($_POST['crypt']) && $_POST['crypt']) {
 					
