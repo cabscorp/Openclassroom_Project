@@ -15,8 +15,6 @@
 				if (isset($_POST['crypt']) && $_POST['crypt']) {
 					
 					echo '<p>' . sha1($_POST['crypt']) . '</p>';
-				} else {
-					echo '<p>Veuillez rentrer des caractères !'; 
 				}
 			?>
 	</body>
