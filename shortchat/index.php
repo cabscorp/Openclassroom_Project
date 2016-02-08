@@ -6,7 +6,7 @@ session_start();
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Test BDD</title>
+		<title>ShortChat</title>
 		<meta charset='utf-8'/>
 		<style type="text/css">
 		p, h2{
