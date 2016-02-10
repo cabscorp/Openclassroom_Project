@@ -39,14 +39,14 @@ session_start();
 		        die('Erreur : '.$e->getMessage());
 		}
 
-		$reponse = $bdd->query('SELECT pseudo, message, DATE_FORMAT(date, \'%d/%m/%Y %H:%i\') AS date FROM minichat ORDER BY ID DESC LIMIT 0, 10');
+		$reponse = $bdd->query('SELECT pseudo, message, date FROM minichat ORDER BY ID DESC LIMIT 0, 10');
 		
 
 		while ($donnees = $reponse->fetch())
 		{
 		?>
 			<p>
-				<?php echo '<b>' . htmlspecialchars($donnees['pseudo']) . '</b>' . ' : ' . htmlspecialchars($donnees['message']) . ' (' . $donnees['date'] . ')'; ?>
+				<?php echo '<b>' . htmlspecialchars($donnees['pseudo']) . '</b>' . ' : ' . htmlspecialchars($donnees['message']) . " le " . $donnees['date']; ?>
 			</p>
 		<?php	
 			
