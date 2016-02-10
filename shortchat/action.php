@@ -17,7 +17,7 @@
 		}
 
 		//Insert pseudo and message in db
-		$req = $bdd->prepare('INSERT INTO minichat(pseudo, message) VALUES(?, ?)');
+		$req = $bdd->prepare('INSERT INTO minichat(pseudo, message, date) VALUES(?, ?, NOW())');
 		$req->execute(array($_POST['pseudo'], $_POST['message']));
 
 		$req->closeCursor();
