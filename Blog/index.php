@@ -23,7 +23,7 @@
 		while ($donnees = $reponse->fetch())
 		{
 		?>
-			<h3><?php echo $donnees['title']; ?></h3>
+			<h3><?php echo $donnees['title'] . ' ' . $donnees['date']; ?></h3>
 			
 			<div class="news">
 				<p><?php echo $donnees['content']; ?></p>
