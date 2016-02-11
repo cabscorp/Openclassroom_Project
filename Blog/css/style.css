@@ -7,12 +7,14 @@ h3
     background-color:black;
     color:white;
     font-size:0.9em;
-    margin-bottom:0px;
+    margin: auto;
+    width: 70%;
 }
 .news p
 {
     background-color:#CCCCCC;
     margin-top:0px;
+    padding: 10px;
 }
 .news
 {
