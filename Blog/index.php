@@ -17,22 +17,14 @@
 		        die('Erreur : '.$e->getMessage());
 		}
 
-		$reponse = $bdd->query('SELECT title, content, DATE_FORMAT(date_creation, \'%d/%m/%Y %H:%i\') AS date FROM billets ORDER BY date DESC LIMIT 0, 5');
-		
+		$reponse = $bdd->query('SELECT id, title, content, DATE_FORMAT(date_creation, \'%d/%m/%Y %H:%i\') AS date FROM billets ORDER BY date DESC LIMIT 0, 5');
 
+		//Display billet content
 		while ($donnees = $reponse->fetch())
 		{
-		?>
-			<h3><?php echo $donnees['title'] . ' ' . $donnees['date']; ?></h3>
-			
-			<div class="news">
-				<p><?php echo $donnees['content']; ?></p>
-			</div>
-
-		<?php	
-			
+			include('billet.php');
 		}	
-
+		//End of billet loop
 		$reponse->closeCursor();
 
 		?>
