@@ -48,9 +48,14 @@ h4:hover
 {
     margin-top:0px;
     padding: 10px;
-    font-family: 'Dosis', sans-serif;
     text-align: center;
 }
+
+p
+{
+    font-family: 'Dosis', sans-serif;
+}
+
 .news
 {
    width:70%;

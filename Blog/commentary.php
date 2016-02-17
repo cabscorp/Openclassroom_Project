@@ -26,14 +26,23 @@
 
                 $donnees = $req->fetch();
 
-                //Display billet
-                include('billet_commentary.php');
+                //See if billet exist
+                if(!empty($donnees)){
+                    
+                    //Display billet
+                    include('billet_commentary.php');
 
                 //Close first request
                 $req->closeCursor();
                 
                 //Open second request (Display commentary)
                 echo '<h2>Commentaires</h2>';
+
+                }else {
+                    
+                    echo "<p>Ce billet n'existe pas.</p>";
+                }
+                
                 $req = $bdd->prepare('SELECT autor, content, DATE_FORMAT(date_commentary, \'%d/%m/%Y à %H:%i\') AS date FROM commentary WHERE id_billet = ?');
                 $req->execute(array($_GET['billet']));
                 
