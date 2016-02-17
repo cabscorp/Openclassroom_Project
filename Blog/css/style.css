@@ -1,27 +1,55 @@
+@import url(https://fonts.googleapis.com/css?family=Bitter);
+@import url(https://fonts.googleapis.com/css?family=Dosis);
+
+body
+{
+    background: url('../img/bg.jpg');
+}
+
 #content
 {
     width:70%;
     margin:auto;
+    background: rgba(84, 78, 255, 0.06);
+    border-radius: 20px;
+}
+
+section
+{
+    padding: 20px;
 }
 
 h1, h2, h3
 {
     text-align:center;
+    font-family: 'Bitter', serif;
 }
 
 h3
 {
-    background-color:black;
     color:white;
     font-size:0.9em;
     margin: auto;
     width: 70%;
+    font-family: 'Bitter', serif;
 }
+
+h4
+{
+    font-family: 'Bitter', serif;
+}
+
+h4:hover
+{
+    text-decoration: underline;
+}
+
 .news p
 {
-    background-color:#CCCCCC;
     margin-top:0px;
     padding: 10px;
+    font-family: 'Dosis', sans-serif;
+    text-align: center;
 }
 .news
 {
@@ -33,6 +61,7 @@ a
 {
     text-decoration: none;
     color: blue;
+    font-family: 'Dosis', sans-serif;
 }
 
 a:hover
