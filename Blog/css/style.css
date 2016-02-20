@@ -74,3 +74,24 @@ a:hover
     text-decoration: underline;
     color: red;
 }
+
+#number_page
+{
+    display: inline;
+}
+
+#commentary_new 
+{
+    display: block;
+}
+
+#labelcommentary
+{
+    display: block;
+}
+
+/* Separator line */
+#hrbillet
+{
+    width: 50%;
+}
