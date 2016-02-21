@@ -3,7 +3,7 @@
 
 body
 {
-    background: url('../img/bg.jpg');
+    background: url('../img/bg.jpg') fixed;
 }
 
 #content
