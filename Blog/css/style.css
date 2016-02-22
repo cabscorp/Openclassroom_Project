@@ -80,7 +80,12 @@ a:hover
     display: inline;
 }
 
-#commentary_new 
+input, textarea
+{
+    background-color: rgba(0, 32, 234, 0.1);
+}
+
+textarea
 {
     display: block;
 }
