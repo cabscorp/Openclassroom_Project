@@ -37,17 +37,21 @@ $req2 = $bdd->query('SELECT id, title FROM billets ORDER BY date_creation DESC')
 					<?php
 					while($donnees = $req->fetch()) {
 						
-						echo '<option>' . $donnees['title'] . '</option>';
+						echo '<option data-id=' . $donnees['id'] . '>' . $donnees['title'] . '</option>';
 					}
 					?>
 				</SELECT>
-				<label for="new_title">Nouveau titre : </label><input type="text" name="new_title" id="new_title" value="<?php echo $donnees['title'];?>"></input>
+				<label for="new_title">Nouveau titre : </label><input type="text" name="new_title" id="new_title" value=""></input>
 				<br/>
 				<br/>
-				<textarea rows="10" cols="70" name="new_content"></textarea>
+				<textarea rows="10" cols="70" name="new_content" id="new_content"></textarea>
 				<br/>
 				<input type="submit" value="Envoyer"/>
 			</form>
+
+			<!--  ZOne a supprimer apres les test -->
+			<div id='log'>
+			</div>
 
 			<br/>
 			<hr/>
@@ -55,7 +59,7 @@ $req2 = $bdd->query('SELECT id, title FROM billets ORDER BY date_creation DESC')
 			<!-- Delete billet -->
 			<h2>Supprimer un billet</h2>
 			<form method="post" action="delete.php">
-				<label for="billettodelete">Billet à supprimer :</label>
+				<label for="billettodelete">Billet à supprimer :<span style="color:red;">*</span></label>
 				<SELECT name="billettodelete" id="billettodelete">
 					<?php
 					while($donnees2 = $req2->fetch()) {
@@ -64,8 +68,11 @@ $req2 = $bdd->query('SELECT id, title FROM billets ORDER BY date_creation DESC')
 					}
 					?>
 				</SELECT>
-				<input type="submit" value="Supprimer"/>	
+				<input type="submit" value="Supprimer"/>
+				<p style="color:red;">*Attention, cette action est irréversible !</p>	
 			</form>
 		</section>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+		<script src="../js/main.js"></script>
 	</body>
 </html>
