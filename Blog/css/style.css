@@ -51,7 +51,7 @@ h4:hover
     text-align: center;
 }
 
-p
+p, input[type="submit"], a
 {
     font-family: 'Dosis', sans-serif;
 }
@@ -66,7 +66,6 @@ a
 {
     text-decoration: none;
     color: blue;
-    font-family: 'Dosis', sans-serif;
 }
 
 a:hover
@@ -99,4 +98,16 @@ textarea
 #hrbillet
 {
     width: 50%;
+}
+
+input[type="submit"]
+{
+    cursor:pointer;
+    background-color: #C6C8E6;
+    border-radius: 10px;
+}
+
+input[type="submit"]:hover
+{
+    background-color: white;
 }

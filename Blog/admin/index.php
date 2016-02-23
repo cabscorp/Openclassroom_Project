@@ -1,15 +1,7 @@
 <?php
-try {
-	
-	$bdd = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', '', 
-	array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-}
-catch(Exception $e) {
-	
-	die('Erreur : '.$e->getMessage());
-}
+include('../database_connect.php');
 
-$req = $bdd->query('SELECT title, content FROM billets ORDER BY date_creation DESC');
+$req = $bdd->query('SELECT id, title, content FROM billets ORDER BY date_creation DESC');
 ?>
 <!DOCTYPE html>
 <html>
@@ -38,8 +30,9 @@ $req = $bdd->query('SELECT title, content FROM billets ORDER BY date_creation DE
 
 			<!-- Update billet -->
 			<h2>Modifier un billet</h2><br/>
-			<form method="post">
-				<SELECT>
+			<form method="post" action="update.php">
+				<label for="actual_title">Titre actuel : </label>
+				<SELECT name="selected_title" id="actual_title">
 					<?php
 					while($donnees = $req->fetch()) {
 						
@@ -47,6 +40,12 @@ $req = $bdd->query('SELECT title, content FROM billets ORDER BY date_creation DE
 					}
 					?>
 				</SELECT>
+				<label for="new_title">Nouveau titre : </label><input type="text" name="new_title" id="new_title" value="<?php echo $donnees['title'];?>"></input>
+				<br/>
+				<br/>
+				<textarea rows="10" cols="70" name="new_content"></textarea>
+				<br/>
+				<input type="submit" value="Envoyer"/>
 			</form>
 		</section>
 	</body>

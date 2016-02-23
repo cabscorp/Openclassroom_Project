@@ -1,15 +1,5 @@
 <?php
-try 
-{
-    
-    $bdd = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', '', 
-    array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-}
-
-catch(Exception $e) {
-    
-    die('Erreur : '.$e->getMessage());
-}
+include('database_connect.php');
 
 if (!empty($_POST['auteur'] AND $_POST['commentary_new'])) {
 	
@@ -20,13 +10,8 @@ if (!empty($_POST['auteur'] AND $_POST['commentary_new'])) {
 	header('Location: commentary.php?billet=' . $_POST['billet_id']);
 
 } else {
-?>
 
-<script type="text/javascript">
-	alert('Veuillez rentrer un nom et un commentaire !');
-</script>
-
-<?php
+	echo '<p>Veuillez saisir un commentaire</p>';
 }
 
 ?>

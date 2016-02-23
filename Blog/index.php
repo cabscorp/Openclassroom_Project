@@ -1,13 +1,5 @@
 <?php
-try {
-	
-	$bdd = new PDO('mysql:host=localhost;dbname=blog;charset=utf8', 'root', '', 
-	array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
-}
-catch(Exception $e) {
-	
-	die('Erreur : '.$e->getMessage());
-}
+include('database_connect.php');
 
 $reponse = $bdd->query('SELECT id, title, content, DATE_FORMAT(date_creation, \'%d/%m/%Y %H:%i\') AS date FROM billets ORDER BY date DESC LIMIT 0, 5');
 ?>
