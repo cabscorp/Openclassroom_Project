@@ -2,6 +2,7 @@
 include('../database_connect.php');
 
 $req = $bdd->query('SELECT id, title, content FROM billets ORDER BY date_creation DESC');
+$req2 = $bdd->query('SELECT id, title FROM billets ORDER BY date_creation DESC');
 ?>
 <!DOCTYPE html>
 <html>
@@ -46,6 +47,24 @@ $req = $bdd->query('SELECT id, title, content FROM billets ORDER BY date_creatio
 				<textarea rows="10" cols="70" name="new_content"></textarea>
 				<br/>
 				<input type="submit" value="Envoyer"/>
+			</form>
+
+			<br/>
+			<hr/>
+
+			<!-- Delete billet -->
+			<h2>Supprimer un billet</h2>
+			<form method="post" action="delete.php">
+				<label for="billettodelete">Billet à supprimer :</label>
+				<SELECT name="billettodelete" id="billettodelete">
+					<?php
+					while($donnees2 = $req2->fetch()) {
+						
+						echo '<option>' . $donnees2['title'] . '</option>';
+					}
+					?>
+				</SELECT>
+				<input type="submit" value="Supprimer"/>	
 			</form>
 		</section>
 	</body>
