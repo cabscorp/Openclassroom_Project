@@ -12,6 +12,10 @@ $req2 = $bdd->query('SELECT id, title FROM billets ORDER BY date_creation DESC')
 		<link rel="stylesheet" type="text/css" href="../css/style.css"/>
 	</head>
 	<body>
+		<header>
+			<?php include('../navbar.php') ?>
+		</header>
+		
 		<section id="content">
 			<!-- Add billet -->
 			<h2>Ajouter un nouveau billet</h2><br/>
@@ -41,7 +45,11 @@ $req2 = $bdd->query('SELECT id, title FROM billets ORDER BY date_creation DESC')
 					}
 					?>
 				</SELECT>
+				<br/><br/>
 				<label for="new_title">Nouveau titre : </label><input type="text" name="new_title" id="new_title" value=""></input>
+				<br/>
+				<br/>
+				<label for="new_content">Contenu :</label>
 				<br/>
 				<br/>
 				<textarea rows="10" cols="70" name="new_content" id="new_content"></textarea>

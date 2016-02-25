@@ -1,0 +1,4 @@
+AuthName "Page d'administration protégée"
+AuthType Basic
+AuthUserFile "E:\Aurelien\Programmes\wamp\www\Openclassroom_Project\Blog\admin\.htpasswd"
+Require valid-user

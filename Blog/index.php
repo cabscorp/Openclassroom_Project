@@ -11,6 +11,10 @@ $reponse = $bdd->query('SELECT id, title, content, DATE_FORMAT(date_creation, \'
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 	</head>
 	<body>
+		<header>
+			<?php include('navbar.php'); ?>
+		</header>
+		
 		<div id="content">
 			<section>
 				<?php
