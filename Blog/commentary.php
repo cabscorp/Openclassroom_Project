@@ -1,12 +1,14 @@
+<?php session_start() ?>
+
 <?php
 include('database_connect.php');
-
 //Open first request (Display billet)
 $req = $bdd->prepare('SELECT id, title, content, DATE_FORMAT(date_creation, \'%d/%m/%Y %H:%i\') AS date FROM billets WHERE id = ?');
 $req->execute(array($_GET['billet']));
 $donnees = $req->fetch();
 //Close first request
 $req->closeCursor();
+$_SESSION['id'] = $_GET['billet'];
 
 ?>
 <!DOCTYPE html>
@@ -22,7 +24,7 @@ $req->closeCursor();
             <?php include('navbar.php'); ?>
         </header>
         
-        <div id="content">
+        <div class="content">
             <section>
                 <?php
                 
@@ -67,7 +69,6 @@ $req->closeCursor();
                     }
                     
                     $req->closeCursor();
-
                     ?>
                 <p><a href="index.php">Retour à la liste des billets</a></p>
             

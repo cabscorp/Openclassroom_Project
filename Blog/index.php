@@ -15,7 +15,7 @@ $reponse = $bdd->query('SELECT id, title, content, DATE_FORMAT(date_creation, \'
 			<?php include('navbar.php'); ?>
 		</header>
 		
-		<div id="content">
+		<div class="content">
 			<section>
 				<?php
 				//Display billet content

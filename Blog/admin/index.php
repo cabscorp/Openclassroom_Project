@@ -16,7 +16,7 @@ $req2 = $bdd->query('SELECT id, title FROM billets ORDER BY date_creation DESC')
 			<?php include('../navbar.php') ?>
 		</header>
 		
-		<section id="content">
+		<section class="content">
 			<!-- Add billet -->
 			<h2>Ajouter un nouveau billet</h2><br/>
 			<form action="add.php" method="post">
