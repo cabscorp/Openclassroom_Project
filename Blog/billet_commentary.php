@@ -1,7 +1,7 @@
-<h3><?php echo htmlspecialchars($donnees['title']) . ' ' . $donnees['date']; ?></h3>
+<h3><?= strip_tags($donnees['title']) . ' ' . $donnees['date'] ?></h3>
 <div class="news">
 	<p>	
-		<?php echo nl2br(htmlspecialchars($donnees['content'])); ?>
+		<?= nl2br(strip_tags($donnees['content'])) ?>
 		<br />
 	</p>
 </div>
