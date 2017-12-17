@@ -15,7 +15,7 @@ $_SESSION['id'] = $_GET['billet'];
 <html>
     <head>
         <meta charset="utf-8" />
-        <title><?php echo $donnees['title'];?></title>
+        <title><?= $donnees['title'] ?></title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
     </head>
         
