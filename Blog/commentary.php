@@ -44,7 +44,7 @@ $_SESSION['id'] = $_GET['billet'];
                     while($donnees = $req->fetch()) {
                     ?>
 
-                        <h4><?php echo htmlspecialchars($donnees['autor']) . ' ' . $donnees['date']; ?></h4>
+                        <h4><?php echo strip_tags($donnees['autor']) . ' ' . $donnees['date']; ?></h4>
                         <p><?php echo htmlspecialchars($donnees['content']); ?></p>
 
                     <?php
